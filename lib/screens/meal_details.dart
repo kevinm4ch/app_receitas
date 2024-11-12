@@ -1,6 +1,10 @@
+import 'package:app_receitas/widgets/meal_details/detail_title.dart';
+import 'package:app_receitas/widgets/meal_details/meal_detail_list.dart';
+import 'package:app_receitas/widgets/meal_details/meal_ingredient.dart';
+import 'package:app_receitas/widgets/meal_details/meal_step.dart';
+import 'package:transparent_image/transparent_image.dart';
 import 'package:app_receitas/models/meal.dart';
 import 'package:flutter/material.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class MealDetailsScreen extends StatelessWidget {
   const MealDetailsScreen(
@@ -26,77 +30,20 @@ class MealDetailsScreen extends StatelessWidget {
               height: 400,
               width: double.infinity,
             ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text('Ingredientes',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  )),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              padding: EdgeInsets.all(25.0),
+            const DetailTitle(title: 'Ingredientes'),
+            MealDetailList(
               itemCount: meal.ingredients.length,
-              itemBuilder: (context, index) => Card(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 12,
-                  ),
-                  child: Text(
-                    meal.ingredients[index],
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+              itemBuilder: (context, index) => MealIngredient(
+                ingredient: meal.ingredients[index],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text('Passo-a-passo',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  )),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              padding: EdgeInsets.all(25.0),
-              physics: NeverScrollableScrollPhysics(),
+            const DetailTitle(title: 'Passo-a-passo'),
+            MealDetailList(
               itemCount: meal.steps.length,
-              itemBuilder: (context, index) => Card(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
-                    horizontal: 12,
-                  ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: EdgeInsets.all(8),
-                        margin: EdgeInsets.only(right: 8),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: categoryColor,
-                        ),
-                        child: Text(
-                          "#" + (index + 1).toString(),
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
-                        ),
-                      ),
-                      Expanded(child: Text(
-                        meal.steps[index],
-                        style: TextStyle(color: Colors.white),
-                      ))
-                    ],
-                  ),
-                ),
+              itemBuilder: (context, index) => MealStep(
+                categoryColor: categoryColor,
+                step: meal.steps[index],
+                index: index,
               ),
             ),
           ],
@@ -105,3 +52,5 @@ class MealDetailsScreen extends StatelessWidget {
     );
   }
 }
+
+

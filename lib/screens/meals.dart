@@ -1,5 +1,5 @@
 import 'package:app_receitas/models/category.dart';
-import 'package:app_receitas/widgets/meal_item.dart';
+import 'package:app_receitas/widgets/meals/meal_item.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
 

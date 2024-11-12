@@ -2,7 +2,7 @@ import 'package:app_receitas/screens/meal_details.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
-import '../models/meal.dart';
+import '../../models/meal.dart';
 import 'meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {

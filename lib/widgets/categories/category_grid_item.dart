@@ -1,7 +1,7 @@
 import 'package:app_receitas/data/dummy_data.dart';
 import 'package:app_receitas/screens/meals.dart';
 import 'package:flutter/material.dart';
-import '../models/category.dart';
+import '../../models/category.dart';
 
 class CategoryGridItem extends StatelessWidget {
   const CategoryGridItem({super.key, required this.category});
