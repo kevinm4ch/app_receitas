@@ -28,7 +28,7 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.all(15.0),
-              child: Text('Ingredients',
+              child: Text('Ingredientes',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -37,6 +37,7 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             ListView.builder(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsets.all(25.0),
               itemCount: meal.ingredients.length,
               itemBuilder: (context, index) => Card(
@@ -56,7 +57,7 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             const Padding(
               padding: EdgeInsets.all(15.0),
-              child: Text('Steps',
+              child: Text('Passo-a-passo',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -66,6 +67,7 @@ class MealDetailsScreen extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               padding: EdgeInsets.all(25.0),
+              physics: NeverScrollableScrollPhysics(),
               itemCount: meal.steps.length,
               itemBuilder: (context, index) => Card(
                 child: Padding(

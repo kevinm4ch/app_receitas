@@ -20,7 +20,7 @@ class ComidaScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Nothing to show!',
+            'Nenhuma receita encontrada!',
             style: Theme.of(context)
                 .textTheme
                 .headlineLarge!
@@ -30,7 +30,7 @@ class ComidaScreen extends StatelessWidget {
             height: 16,
           ),
           Text(
-            'Try selecting a different category!',
+            'Tente selecionar uma categoria diferente!',
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
