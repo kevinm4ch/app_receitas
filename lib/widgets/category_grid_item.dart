@@ -17,7 +17,7 @@ class CategoryGridItem extends StatelessWidget {
           MaterialPageRoute(
               builder: (context) =>
                   ComidaScreen(
-                    title: category.title, 
+                    category: category, 
                     meals: dummyMeals
                       .where((m) => m.categories.contains(category.id))
                       .toList(),
@@ -45,7 +45,7 @@ class CategoryGridItem extends StatelessWidget {
           style: Theme.of(context)
               .textTheme
               .titleLarge!
-              .copyWith(color: Theme.of(context).colorScheme.onBackground),
+              .copyWith(color: Theme.of(context).colorScheme.onSurface),
         ),
       ),
     );

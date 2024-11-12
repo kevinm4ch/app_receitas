@@ -1,3 +1,4 @@
+import 'package:app_receitas/models/category.dart';
 import 'package:app_receitas/widgets/meal_item.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
@@ -5,11 +6,11 @@ import '../models/meal.dart';
 class ComidaScreen extends StatelessWidget {
   const ComidaScreen({
     super.key,
-    required this.title,
+    required this.category,
     required this.meals,
   });
 
-  final String title;
+  final Category category;
   final List<Meal> meals;
 
   @override
@@ -23,7 +24,7 @@ class ComidaScreen extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .headlineLarge!
-                .copyWith(color: Theme.of(context).colorScheme.onBackground),
+                .copyWith(color: Theme.of(context).colorScheme.onSurface),
           ),
           const SizedBox(
             height: 16,
@@ -33,7 +34,7 @@ class ComidaScreen extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
-                .copyWith(color: Theme.of(context).colorScheme.onBackground),
+                .copyWith(color: Theme.of(context).colorScheme.onSurface),
           ),
         ],
       ),
@@ -42,14 +43,15 @@ class ComidaScreen extends StatelessWidget {
     if (meals.isNotEmpty) {
       content = ListView.builder(
         itemCount: meals.length,
-        itemBuilder: (ctx, index) => MealItem(meal: meals[index]),
+        itemBuilder: (ctx, index) => MealItem(meal: meals[index], appBarColor: category.color.withOpacity(0.5)),
       );
     }
     //Text(meals[index].title)
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(category.title),
+        backgroundColor: category.color.withOpacity(0.5),
       ),
       body: content,
     );

@@ -1,3 +1,4 @@
+import 'package:app_receitas/screens/meal_details.dart';
 import 'package:flutter/material.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -5,9 +6,10 @@ import '../models/meal.dart';
 import 'meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal});
+  const MealItem({super.key, required this.meal, required this.appBarColor});
 
   final Meal meal;
+  final Color? appBarColor;
 
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +
@@ -27,11 +29,21 @@ class MealItem extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation: 2,
       child: InkWell(
-        onTap: (){},
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => MealDetailsScreen(
+                      meal: meal,
+                      appBarColor: appBarColor
+                          
+                    )),
+          );
+        },
         child: Stack(
           children: [
             FadeInImage(
-              placeholder: MemoryImage(kTransparentImage), 
+              placeholder: MemoryImage(kTransparentImage),
               image: NetworkImage(meal.imageUrl),
               height: 200,
               fit: BoxFit.cover,
@@ -61,7 +73,9 @@ class MealItem extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 12,),
+                    const SizedBox(
+                      height: 12,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -69,14 +83,18 @@ class MealItem extends StatelessWidget {
                           icon: Icons.schedule,
                           label: '${meal.duration} min',
                         ),
-                        const SizedBox(width: 12,),
+                        const SizedBox(
+                          width: 12,
+                        ),
                         MealItemTrait(
-                          icon: Icons.work, 
+                          icon: Icons.work,
                           label: complexityText,
                         ),
-                        const SizedBox(width: 12,),
+                        const SizedBox(
+                          width: 12,
+                        ),
                         MealItemTrait(
-                          icon: Icons.attach_money, 
+                          icon: Icons.attach_money,
                           label: affordabilityText,
                         ),
                       ],
