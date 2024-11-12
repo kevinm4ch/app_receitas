@@ -43,7 +43,7 @@ class ComidaScreen extends StatelessWidget {
     if (meals.isNotEmpty) {
       content = ListView.builder(
         itemCount: meals.length,
-        itemBuilder: (ctx, index) => MealItem(meal: meals[index], appBarColor: category.color.withOpacity(0.5)),
+        itemBuilder: (ctx, index) => MealItem(meal: meals[index], categoryColor: category.color.withOpacity(0.5)),
       );
     }
     //Text(meals[index].title)

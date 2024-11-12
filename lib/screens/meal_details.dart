@@ -4,17 +4,17 @@ import 'package:transparent_image/transparent_image.dart';
 
 class MealDetailsScreen extends StatelessWidget {
   const MealDetailsScreen(
-      {super.key, required this.meal, required this.appBarColor});
+      {super.key, required this.meal, required this.categoryColor});
 
   final Meal meal;
-  final Color? appBarColor;
+  final Color? categoryColor;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
-        backgroundColor: appBarColor,
+        backgroundColor: categoryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -81,11 +81,11 @@ class MealDetailsScreen extends StatelessWidget {
                         margin: EdgeInsets.only(right: 8),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: appBarColor,
+                          color: categoryColor,
                         ),
                         child: Text(
                           "#" + (index + 1).toString(),
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ),
                       Expanded(child: Text(

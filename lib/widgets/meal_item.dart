@@ -6,10 +6,10 @@ import '../models/meal.dart';
 import 'meal_item_trait.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal, required this.appBarColor});
+  const MealItem({super.key, required this.meal, required this.categoryColor});
 
   final Meal meal;
-  final Color? appBarColor;
+  final Color? categoryColor;
 
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +
@@ -35,7 +35,7 @@ class MealItem extends StatelessWidget {
             MaterialPageRoute(
                 builder: (context) => MealDetailsScreen(
                       meal: meal,
-                      appBarColor: appBarColor
+                      categoryColor: categoryColor
                           
                     )),
           );
