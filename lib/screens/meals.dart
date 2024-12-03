@@ -1,0 +1,67 @@
+import 'package:app_receitas/models/category.dart';
+import 'package:app_receitas/widgets/meals/meal_item.dart';
+import 'package:flutter/material.dart';
+import '../models/meal.dart';
+
+class MealScreen extends StatelessWidget {
+  const MealScreen(
+      {super.key,
+      this.category,
+      required this.meals,
+      required this.onToogleFavorite});
+
+  final Category? category;
+  final List<Meal> meals;
+  final Function onToogleFavorite;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget content = Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Nenhuma receita encontrada!',
+            style: Theme.of(context)
+                .textTheme
+                .headlineLarge!
+                .copyWith(color: Theme.of(context).colorScheme.onSurface),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Text(
+            'Tente selecionar uma categoria diferente!',
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(color: Theme.of(context).colorScheme.onSurface),
+          ),
+        ],
+      ),
+    );
+
+    if (meals.isNotEmpty) {
+      content = ListView.builder(
+        itemCount: meals.length,
+        itemBuilder: (ctx, index) => MealItem(
+          meal: meals[index],
+          categoryColor: category?.color.withOpacity(0.5),
+          onToogleFavorite: onToogleFavorite,
+        ),
+      );
+    }
+
+    if (category == null) {
+      return content;
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(category!.title),
+        backgroundColor: category?.color.withOpacity(0.5),
+      ),
+      body: content,
+    );
+  }
+}
