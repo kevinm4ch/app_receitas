@@ -1,0 +1,12 @@
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/app_receitas
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/icudtl.dat
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/lib/libflutter_linux_gtk.so
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/NOTICES.Z
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/AssetManifest.bin
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/AssetManifest.json
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/FontManifest.json
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/data/flutter_assets/version.json
+/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/linux/x64/release/bundle/lib/libapp.so

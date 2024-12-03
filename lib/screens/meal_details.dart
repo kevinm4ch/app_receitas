@@ -8,10 +8,14 @@ import 'package:flutter/material.dart';
 
 class MealDetailsScreen extends StatelessWidget {
   const MealDetailsScreen(
-      {super.key, required this.meal, required this.categoryColor});
+      {super.key,
+      required this.meal,
+      required this.categoryColor,
+      required this.onToogleFavorite});
 
   final Meal meal;
   final Color? categoryColor;
+  final Function onToogleFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +23,13 @@ class MealDetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(meal.title),
         backgroundColor: categoryColor,
+        actions: [
+          IconButton(
+              onPressed: () {
+                onToogleFavorite(meal);
+              },
+              icon: Icon(Icons.star))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -52,5 +63,3 @@ class MealDetailsScreen extends StatelessWidget {
     );
   }
 }
-
-

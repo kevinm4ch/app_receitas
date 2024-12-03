@@ -3,15 +3,16 @@ import 'package:app_receitas/widgets/meals/meal_item.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
-class ComidaScreen extends StatelessWidget {
-  const ComidaScreen({
-    super.key,
-    required this.category,
-    required this.meals,
-  });
+class MealScreen extends StatelessWidget {
+  const MealScreen(
+      {super.key,
+      this.category,
+      required this.meals,
+      required this.onToogleFavorite});
 
-  final Category category;
+  final Category? category;
   final List<Meal> meals;
+  final Function onToogleFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -43,15 +44,22 @@ class ComidaScreen extends StatelessWidget {
     if (meals.isNotEmpty) {
       content = ListView.builder(
         itemCount: meals.length,
-        itemBuilder: (ctx, index) => MealItem(meal: meals[index], categoryColor: category.color.withOpacity(0.5)),
+        itemBuilder: (ctx, index) => MealItem(
+          meal: meals[index],
+          categoryColor: category?.color.withOpacity(0.5),
+          onToogleFavorite: onToogleFavorite,
+        ),
       );
     }
-    //Text(meals[index].title)
+
+    if (category == null) {
+      return content;
+    }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.title),
-        backgroundColor: category.color.withOpacity(0.5),
+        title: Text(category!.title),
+        backgroundColor: category?.color.withOpacity(0.5),
       ),
       body: content,
     );

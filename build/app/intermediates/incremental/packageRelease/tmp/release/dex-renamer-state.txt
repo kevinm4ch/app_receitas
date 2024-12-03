@@ -1,0 +1,4 @@
+#Tue Nov 12 14:27:44 BRT 2024
+base.0=/home/kevin/Documentos/Scripts/curso-flutter/app_receitas/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

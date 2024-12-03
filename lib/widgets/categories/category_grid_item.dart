@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import '../../models/category.dart';
 
 class CategoryGridItem extends StatelessWidget {
-  const CategoryGridItem({super.key, required this.category});
+  const CategoryGridItem({super.key, required this.category, required this.onToogleFavorite});
 
   final Category category;
+  final Function onToogleFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +17,12 @@ class CategoryGridItem extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  ComidaScreen(
+                  MealScreen(
                     category: category, 
                     meals: dummyMeals
                       .where((m) => m.categories.contains(category.id))
                       .toList(),
+                    onToogleFavorite: onToogleFavorite,
             ),
           ),
         );
