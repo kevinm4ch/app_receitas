@@ -1,0 +1,1 @@
+ /home/kevin/Documentos/Scripts/curso-flutter/app_receitas/.dart_tool/flutter_build/121af1609ce76f8d7dbb304003007731/native_assets.yaml: 
