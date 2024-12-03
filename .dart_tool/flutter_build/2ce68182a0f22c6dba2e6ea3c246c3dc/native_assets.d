@@ -1,1 +1,0 @@
- /home/kevin/GitHub/app_receitas/.dart_tool/flutter_build/2ce68182a0f22c6dba2e6ea3c246c3dc/native_assets.yaml: 
